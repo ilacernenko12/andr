@@ -12,22 +12,34 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText editText;
+    EditText editText, log, password;
     TextView textView;
     RadioButton rb1, rb2;
     RadioGroup radioGroup;
-
+    Button next, logIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.button);
+        next = findViewById(R.id.button);
         radioGroup = findViewById(R.id.radiogroup);
         rb1 = findViewById(R.id.radioButton1);
         rb2 = findViewById(R.id.radioButton2);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textView2);
-        button.setOnClickListener(this);
+        log = findViewById(R.id.log);
+        password = findViewById(R.id.password);
+        logIn = findViewById(R.id.buttonLogIn);
+        Intent i = new Intent(this, MainActivity2.class);
+        next.setOnClickListener(view -> {
+            String s = editText.getText().toString();
+            i.putExtra("q", s);
+        });
+        logIn.setOnClickListener(view -> {
+            String l = log.getText().toString();
+            i.putExtra("w", l);
+            startActivity(i);
+        });
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -49,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = new Intent(this, MainActivity2.class);
         String s = editText.getText().toString();
         i.putExtra("q", s);
+
+        String l = log.getText().toString();
+        i.putExtra("w", l);
         startActivity(i);
     }
 
