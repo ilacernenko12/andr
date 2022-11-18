@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="731dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/button"
@@ -15,13 +23,18 @@
         android:text="NEXT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editText"
+        app:layout_constraintVertical_bias="1.2" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="223dp"
-        android:layout_height="45dp"
+        android:textSize="26dp"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -58,16 +71,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="239dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="212dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.402"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonLogIn"
         android:layout_width="wrap_content"
@@ -85,7 +88,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="264dp"
         android:ems="10"
-
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
